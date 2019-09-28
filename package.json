@@ -1,0 +1,22 @@
+{
+  "name": "@baleada/nifty-loader",
+  "version": "0.0.0",
+  "description": "A flexible webpack loader for markdown files",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/baleada/nifty-loader.git"
+  },
+  "keywords": [
+    "baleada"
+  ],
+  "author": "AlexVipond",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/baleada/nifty-loader/issues"
+  },
+  "homepage": "https://gitlab.com/baleada/nifty-loader#readme"
+}
