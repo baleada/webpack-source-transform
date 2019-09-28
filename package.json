@@ -2,12 +2,12 @@
   "name": "@baleada/nifty-loader",
   "version": "0.0.0",
   "description": "A flexible webpack loader for markdown files",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "gen-api": "node scripts/generateIndex.js 'api'",
+    "gen-transforms": "node scripts/generateIndex.js 'transforms'",
     "gen-stubs": "node scripts/generateIndex.js 'stubs'",
     "gen-util": "node scripts/generateIndex.js 'util'",
-    "gen-all": "npm run gen-api && npm run gen-stubs && npm run gen-util",
+    "gen-all": "npm run gen-transforms && npm run gen-stubs && npm run gen-util",
     "empty": "node scripts/emptyDir.js 'lib'",
     "babelify": "npx babel src --out-dir lib",
     "prepare": "npm run gen-all && npm run empty && npm run babelify",
@@ -53,6 +53,7 @@
     "eslint-plugin-standard": "^4.0.1"
   },
   "dependencies": {
+    "front-matter": "^3.0.2",
     "markdown-it": "^10.0.0",
     "prismjs": "^1.17.1"
   }

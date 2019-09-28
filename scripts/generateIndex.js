@@ -19,7 +19,7 @@ ${imported}\n${exported}\n\
 `
   )
 
-  console.log(`Indexed ${files.length} ${dir} functions.`)
+  console.log(`Indexed ${files.length} ${dir} files.`)
 }
 
 generateIndex(dir)

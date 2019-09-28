@@ -2,8 +2,9 @@ const presets = [
         [
           '@babel/preset-env',
           {
-            targets: '> 0.5%, not dead',
-            modules: false,
+            targets: {
+              node: true,
+            },
           },
         ],
       ],
