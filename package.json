@@ -4,19 +4,56 @@
   "description": "A flexible webpack loader for markdown files",
   "main": "index.js",
   "scripts": {
-    "test": "ava"
+    "gen-api": "node scripts/generateIndex.js 'api'",
+    "gen-stubs": "node scripts/generateIndex.js 'stubs'",
+    "gen-util": "node scripts/generateIndex.js 'util'",
+    "gen-all": "npm run gen-api && npm run gen-stubs && npm run gen-util",
+    "empty": "node scripts/emptyDir.js 'lib'",
+    "babelify": "npx babel src --out-dir lib",
+    "prepare": "npm run gen-all && npm run empty && npm run babelify",
+    "test": "npx ava"
   },
   "repository": {
     "type": "git",
     "url": "git+https://gitlab.com/baleada/nifty-loader.git"
   },
   "keywords": [
-    "baleada"
+    "baleada",
+    "nifty",
+    "webpack loader",
+    "markdown"
   ],
-  "author": "AlexVipond",
+  "author": {
+    "name": "Alex Vipond",
+    "email": "hello@alexvipond.dev",
+    "url": "https://alexvipond.dev"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://gitlab.com/baleada/nifty-loader/issues"
   },
-  "homepage": "https://gitlab.com/baleada/nifty-loader#readme"
+  "homepage": "https://gitlab.com/baleada/nifty-loader#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.6.2",
+    "@babel/core": "^7.6.2",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-private-methods": "^7.6.0",
+    "@babel/preset-env": "^7.6.2",
+    "@nuxtjs/eslint-config": "^1.1.2",
+    "ava": "^2.4.0",
+    "babel-eslint": "^10.0.3",
+    "babel-plugin-prismjs": "^1.1.1",
+    "eslint": "^6.4.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-ava": "^9.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-nuxt": "^0.4.3",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1"
+  },
+  "dependencies": {
+    "markdown-it": "^10.0.0",
+    "prismjs": "^1.17.1"
+  }
 }
