@@ -1,9 +1,20 @@
 export default function(render, { toHighlighted, toInnerHtml, toGrid }) {
   return new Map([
-    ['NiftyArticle', string => render(string)],
-    ['NiftyAside', string => render(string)],
-    ['NiftyCodeblock', string => toHighlighted(render(string))],
-    ['NiftyHeading', string => toInnerHtml(render(string))],
-    ['NiftyTable', string => toGrid(render(string))],
+    [
+      'NiftyAside',
+      { preRender: string => render(string), isBlock: true }
+    ],
+    [
+      'NiftyCodeblock',
+      { preRender: string => toHighlighted(render(string)), isBlock: true }
+    ],
+    [
+      'NiftyHeading',
+      { preRender: string => toInnerHtml(render(string)), isBlock: true }
+    ],
+    [
+      'NiftyTable',
+      { preRender: string => toGrid(render(string)), isBlock: true }
+    ],
   ])
 }
