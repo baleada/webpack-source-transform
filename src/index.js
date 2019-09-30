@@ -16,5 +16,5 @@ export default function(source) {
         rendered = md.render(preRendered),
         postRendered = postRender(Array.from(components.keys()).reduce((postRendered, componentName) => removeOuterParagraphs(postRendered, componentName, components), rendered))
 
-  return postRendered
+  return postRendered.replace(/NIFTY_LOADER_PRESERVED_NEWLINE/g, '\n')
 }

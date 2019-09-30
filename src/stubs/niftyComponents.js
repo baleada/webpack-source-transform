@@ -6,7 +6,7 @@ export default function(render, { toHighlighted, toInnerHtml, toGrid }) {
     ],
     [
       'NiftyCodeblock',
-      { preRender: string => toHighlighted(render(string)), isBlock: true }
+      { preRender: string => toHighlighted(render(string)), isBlock: true, preserveNewline: true }
     ],
     [
       'NiftyHeading',

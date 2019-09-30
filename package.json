@@ -42,7 +42,6 @@
     "@nuxtjs/eslint-config": "^1.1.2",
     "ava": "^2.4.0",
     "babel-eslint": "^10.0.3",
-    "babel-plugin-prismjs": "^1.1.1",
     "eslint": "^6.4.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-ava": "^9.0.0",
@@ -55,6 +54,6 @@
   "dependencies": {
     "front-matter": "^3.0.2",
     "markdown-it": "^10.0.0",
-    "prismjs": "^1.17.1"
+    "rainbow-code": "^2.1.4"
   }
 }
