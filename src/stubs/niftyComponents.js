@@ -6,7 +6,18 @@ export default function(render, { toHighlighted, toInnerHtml, toGrid }) {
     ],
     [
       'NiftyCodeblock',
-      { preRender: string => toHighlighted(render(string)), isBlock: true, preserveNewline: true }
+      {
+        preRender: string => {
+          return toHighlighted(
+            render(string)
+              .replace(/&lt;/g, '<')
+              .replace(/&gt;/g, '>')
+              .replace(/&quot;/g, '"')
+          )
+        },
+        isBlock: true,
+        preserveNewline: true
+      }
     ],
     [
       'NiftyHeading',

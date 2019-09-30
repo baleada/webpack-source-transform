@@ -1,6 +1,6 @@
 {
   "name": "@baleada/nifty-loader",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A flexible webpack loader for markdown files",
   "main": "lib/index.js",
   "scripts": {
@@ -54,6 +54,6 @@
   "dependencies": {
     "front-matter": "^3.0.2",
     "markdown-it": "^10.0.0",
-    "rainbow-code": "^2.1.4"
+    "prismjs": "^1.17.1"
   }
 }
