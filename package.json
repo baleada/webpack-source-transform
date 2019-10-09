@@ -1,5 +1,5 @@
 {
-  "name": "@baleada/nifty-loader",
+  "name": "@baleada/prose-loader",
   "version": "0.0.2",
   "description": "A flexible webpack loader for markdown files",
   "main": "lib/index.js",
@@ -15,11 +15,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/baleada/nifty-loader.git"
+    "url": "git+https://gitlab.com/baleada/prose-loader.git"
   },
   "keywords": [
     "baleada",
-    "nifty",
+    "prose",
     "webpack loader",
     "markdown"
   ],
@@ -30,9 +30,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://gitlab.com/baleada/nifty-loader/issues"
+    "url": "https://gitlab.com/baleada/prose-loader/issues"
   },
-  "homepage": "https://gitlab.com/baleada/nifty-loader#readme",
+  "homepage": "https://gitlab.com/baleada/prose-loader#readme",
   "devDependencies": {
     "@babel/cli": "^7.6.2",
     "@babel/core": "^7.6.2",

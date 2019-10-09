@@ -1,7 +1,7 @@
 import defaultOptions from './defaultOptions.js'
-import niftyComponents from './niftyComponents.js'
+import proseComponents from './proseComponents.js'
 
 export {
   defaultOptions,
-  niftyComponents,
+  proseComponents,
 }

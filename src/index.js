@@ -11,10 +11,11 @@ export default function(source) {
         options = { ...defaultOptions, ...getOptions(this) },
         md = new MarkdownIt(options.markdownit),
         components = toMap(resolveComponents(options.components, md.render.bind(md))),
-        { postRender } = options,
-        preRendered = Array.from(components.keys()).reduce((preRendered, componentName) => applyPreRenders(preRendered, componentName, components), body),
+        { preservedNewlineSymbol, postRender } = options,
+        preRendered = Array.from(components.keys()).reduce((preRendered, componentName) => applyPreRenders(preRendered, componentName, components, preservedNewlineSymbol), body),
         rendered = md.render(preRendered),
-        postRendered = postRender(Array.from(components.keys()).reduce((postRendered, componentName) => removeOuterParagraphs(postRendered, componentName, components), rendered))
-
-  return postRendered.replace(/NIFTY_LOADER_PRESERVED_NEWLINE/g, '\n')
+        postRendered = postRender(Array.from(components.keys()).reduce((postRendered, componentName) => removeOuterParagraphs(postRendered, componentName, components), rendered)),
+        preservedNewlineSymbolRegExp = new RegExp(preservedNewlineSymbol, 'g')
+        
+  return postRendered.replace(preservedNewlineSymbolRegExp, '\n')
 }

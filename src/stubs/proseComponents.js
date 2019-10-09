@@ -1,11 +1,11 @@
 export default function(render, { toHighlighted, toInnerHtml, toGrid }) {
   return new Map([
     [
-      'NiftyAside',
+      'ProseAside',
       { preRender: string => render(string), isBlock: true }
     ],
     [
-      'NiftyCodeblock',
+      'ProseCodeblock',
       {
         preRender: string => {
           return toHighlighted(
@@ -20,11 +20,11 @@ export default function(render, { toHighlighted, toInnerHtml, toGrid }) {
       }
     ],
     [
-      'NiftyHeading',
+      'ProseHeading',
       { preRender: string => toInnerHtml(render(string)), isBlock: true }
     ],
     [
-      'NiftyTable',
+      'ProseTable',
       { preRender: string => toGrid(render(string)), isBlock: true }
     ],
   ])
