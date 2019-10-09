@@ -1,3 +1,3 @@
-# `@baleada/nifty-loader`
+# `@baleada/prose-loader`
 
-A flexible Webpack loader for Markdown files.
+A flexible Webpack loader for Markdown files, for the Baleada toolkit.
