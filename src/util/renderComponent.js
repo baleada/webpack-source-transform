@@ -1,5 +1,7 @@
 export default function(string, { name, preRender, preserveNewline }, preservedNewlineSymbol) {
-  const componentRegExp = new RegExp(`<${name}\s?(.*?)>((?:.|\r?\n)*?)</${name}>`, 'gm'), // Doesn't work if components are nested inside themselves
+  const componentRegExp = name instanceof RegExp
+    ? name
+    : new RegExp(`<${name}\s?(.*?)>((?:.|\r?\n)*?)</${name}>`, 'gm'), // Doesn't work if components are nested inside themselves
         getPreRendered = preserveNewline
           ? markdown => preRender(markdown).replace(/\n/g, preservedNewlineSymbol)
           : markdown => preRender(markdown).replace(/\n/g, ''),
