@@ -18,7 +18,7 @@ export default function(md, options) {
 function renderProseGridOpen (md) {
   return () => {
     return replaceTag(
-      md.renderer.render(...arguments),
+      md.renderer.renderToken(...arguments),
       'ProseGrid',
       true,
       {
@@ -33,7 +33,7 @@ function renderProseGridOpen (md) {
 function renderProseGridDescendant (md, descendantName, isClose) {
   return () => {
     return replaceTag(
-      md.renderer.render(...arguments),
+      md.renderer.renderToken(...arguments),
       `Prose${descendantName}`,
       isClose
     )

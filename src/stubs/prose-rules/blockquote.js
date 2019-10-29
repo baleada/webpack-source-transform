@@ -8,7 +8,7 @@ export default function(md, options) {
 function renderProseBlockquoteOpen (md) {
   return (token) => {
     return replaceTag(
-      md.renderer.render(...arguments),
+      md.renderer.renderToken(...arguments),
       'ProseBlockquote',
       false,
       {
@@ -23,7 +23,7 @@ function renderProseBlockquoteOpen (md) {
 function renderProseBlockquoteClose (md) {
   return () => {
     return replaceTag(
-      md.renderer.render(...arguments),
+      md.renderer.renderToken(...arguments),
       'ProseBlockquote',
       true
     )

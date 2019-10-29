@@ -6,14 +6,14 @@ export default function(md, options) {
 }
 
 function renderProseHeadingOpen (md) {
-  return (token) => {
+  return (tokens, index) => {
     return replaceTag(
-      md.renderer.render(...arguments),
+      md.renderer.renderToken(...arguments),
       'ProseHeading',
       false,
       {
         boundAttrs: {
-          level: token.tag.slice(1)
+          level: tokens[index].tag.slice(1)
         }
       }
     )
@@ -23,7 +23,7 @@ function renderProseHeadingOpen (md) {
 function renderProseHeadingClose (md) {
   return () => {
     return replaceTag(
-      md.renderer.render(...arguments),
+      md.renderer.renderToken(...arguments),
       'ProseHeading',
       true
     )
