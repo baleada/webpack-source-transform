@@ -1,7 +1,9 @@
-import defaultOptions from './defaultOptions.js'
-import proseComponents from './proseComponents.js'
+import prosePreRender from './prosePreRender'
+import proseRender from './proseRender'
+import prosePostRender from './prosePostRender'
 
 export {
-  defaultOptions,
-  proseComponents,
+  prosePreRender,
+  proseRender,
+  prosePostRender,
 }
