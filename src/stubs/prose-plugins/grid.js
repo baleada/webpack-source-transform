@@ -9,7 +9,7 @@ export default function(md, options) {
     marker: '|'
   })
 
-  md.renderer.rules.table_open = renderProseGridDescendant(md)
+  md.renderer.rules.table_open = renderProseGridDescendant(md, 'Grid', false)
   md.renderer.rules.table_close = renderProseGridDescendant(md, 'Grid', true)
   md.renderer.rules.thead_open = renderProseGridDescendant(md, 'Rowgroup', false)
   md.renderer.rules.thead_close = renderProseGridDescendant(md, 'Rowgroup', true)
