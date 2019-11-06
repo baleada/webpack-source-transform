@@ -1,7 +1,15 @@
+// grid (||| ...props)
+import MarkdownItContainer from 'markdown-it-container'
 import replaceTag from './util/replaceTag'
+import toProps from './util/toProps'
 
 export default function(md, options) {
-  md.renderer.rules.table_open = renderProseGridOpen(md)
+  md.use(MarkdownItContainer, 'grid', {
+    render: renderProseGrid(md),
+    marker: '|'
+  })
+
+  md.renderer.rules.table_open = renderProseGridDescendant(md)
   md.renderer.rules.table_close = renderProseGridDescendant(md, 'Grid', true)
   md.renderer.rules.thead_open = renderProseGridDescendant(md, 'Rowgroup', false)
   md.renderer.rules.thead_close = renderProseGridDescendant(md, 'Rowgroup', true)
@@ -15,18 +23,19 @@ export default function(md, options) {
   md.renderer.rules.td_close = renderProseGridDescendant(md, 'Gridcell', true)
 }
 
-function renderProseGridOpen (md) {
-  return () => {
-    return replaceTag(
-      md.renderer.renderToken(...arguments),
-      'ProseGrid',
-      true,
-      {
-        attrs: {
-          // TODO: figure out how to pass attrs/props to markdown table
-        }
-      }
-    )
+function renderProseGrid (md) {
+  return (tokens, index) => {
+    const propsInterface = {
+            hasMaxHeight: 'boolean',
+            canFilterByQuery: 'boolean',
+            filterQueryIsCaseSensitive: 'boolean',
+            ariaLabel: 'string',
+          },
+          props = toProps(tokens[index].info, propsInterface)
+
+    return tokens[index].nesting === 1
+      ? `<ProseGrid v-bind="${props}">\n`
+      : '</ProseGrid>'
   }
 }
 

@@ -1,5 +1,21 @@
-// aside (<<< type)
+// aside (<<< ...props)
+import MarkdownItContainer from 'markdown-it-container'
+import toProps from './util/toProps'
 
-import toMultiCharacterMarkerRule from './util/toMultiCharacterMarkerRule'
+export default function(md, options) {
+  md.use(MarkdownItContainer, 'aside', {
+    render: renderProseAside(md),
+    marker: '<'
+  })
+}
 
-export default toMultiCharacterMarkerRule(['0x3c'])
+function renderProseAside (md) {
+  return (tokens, index) => {
+    const propsInterface = { type: 'string' },
+          props = toProps(tokens[index].info, propsInterface)
+          
+    return tokens[index].nesting === 1
+      ? `<ProseAside v-bind="${props}">\n`
+      : '</ProseAside>'
+  }
+}

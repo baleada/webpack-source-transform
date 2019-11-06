@@ -1,31 +1,25 @@
-import replaceTag from './util/replaceTag'
+// blockquote (>>> ...props)
+import MarkdownItContainer from 'markdown-it-container'
+import toProps from './util/toProps'
 
 export default function(md, options) {
-  md.renderer.rules.blockquote_open = renderProseBlockquoteOpen(md)
-  md.renderer.rules.blockquote_close = renderProseBlockquoteClose(md)
+  md.use(MarkdownItContainer, 'blockquote', {
+    render: renderProseBlockquote(md),
+    marker: '>'
+  })
 }
 
-function renderProseBlockquoteOpen (md) {
-  return (token) => {
-    return replaceTag(
-      md.renderer.renderToken(...arguments),
-      'ProseBlockquote',
-      false,
-      {
-        attrs: {
-          // figure out how to pass attrs/props to blockquote
-        }
-      }
-    )
-  }
-}
+function renderProseBlockquote (md) {
+  return (tokens, index) => {
+    const propsInterface = {
+            isTweetable: 'boolean',
+            tweetText: 'string',
+            tweetHashtags: 'array',
+          },
+          props = toProps(tokens[index].info, propsInterface)
 
-function renderProseBlockquoteClose (md) {
-  return () => {
-    return replaceTag(
-      md.renderer.renderToken(...arguments),
-      'ProseBlockquote',
-      true
-    )
+    return tokens[index].nesting === 1
+      ? `<ProseBlockquote v-bind="${props}">\n`
+      : '</ProseBlockquote>'
   }
 }
