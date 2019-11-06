@@ -4,10 +4,9 @@
   "description": "A flexible webpack loader for markdown files",
   "main": "lib/index.js",
   "scripts": {
-    "gen-transforms": "node scripts/generateIndex.js 'transforms'",
+    "gen-prose-plugins": "node scripts/generateIndex.js 'stubs/prose-plugins'",
     "gen-stubs": "node scripts/generateIndex.js 'stubs'",
-    "gen-util": "node scripts/generateIndex.js 'util'",
-    "gen-all": "npm run gen-transforms && npm run gen-stubs && npm run gen-util",
+    "gen-all": "npm run gen-prose-plugins && npm run gen-stubs",
     "empty": "node scripts/emptyDir.js 'lib'",
     "babelify": "npx babel src --out-dir lib",
     "prepare": "npm run gen-all && npm run empty && npm run babelify",

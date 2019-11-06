@@ -1,9 +1,9 @@
-import prosePreRender from './prosePreRender'
-import proseRender from './proseRender'
-import prosePostRender from './prosePostRender'
+import prosePostRender from './prosePostRender.js'
+import prosePreRender from './prosePreRender.js'
+import proseRender from './proseRender.js'
 
 export {
+  prosePostRender,
   prosePreRender,
   proseRender,
-  prosePostRender,
 }

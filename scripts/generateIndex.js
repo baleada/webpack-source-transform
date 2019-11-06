@@ -4,7 +4,7 @@ const fs = require('fs'),
 function generateIndex (dir) {
   const files = fs
           .readdirSync(`./src/${dir}`)
-          .filter(file => file !== 'index.js')
+          .filter(file => file !== 'index.js' && /\.js$/.test(file))
           .map(file => ({
             path: `./${file}`,
             name: file.split('.')[0],
