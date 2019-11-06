@@ -31,10 +31,11 @@ function renderProseGrid (md) {
             filterQueryIsCaseSensitive: 'boolean',
             ariaLabel: 'string',
           },
-          props = toProps(tokens[index].info, propsInterface)
+          props = toProps(tokens[index].info, propsInterface),
+          stringifiedProps = JSON.stringify(props)
 
     return tokens[index].nesting === 1
-      ? `<ProseGrid v-bind="${props}">\n`
+      ? `<ProseGrid v-bind="${stringifiedProps}">\n`
       : '</ProseGrid>'
   }
 }

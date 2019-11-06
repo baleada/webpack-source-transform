@@ -5,7 +5,7 @@ import toProps from './util/toProps'
 export default function(md, options) {
   md.use(MarkdownItContainer, 'blockquote', {
     render: renderProseBlockquote(md),
-    marker: '>'
+    marker: '"'
   })
 }
 
@@ -16,10 +16,11 @@ function renderProseBlockquote (md) {
             tweetText: 'string',
             tweetHashtags: 'array',
           },
-          props = toProps(tokens[index].info, propsInterface)
+          props = toProps(tokens[index].info, propsInterface),
+          stringifiedProps = JSON.stringify(props)
 
     return tokens[index].nesting === 1
-      ? `<ProseBlockquote v-bind="${props}">\n`
+      ? `<ProseBlockquote v-bind="${stringifiedProps}">\n`
       : '</ProseBlockquote>'
   }
 }

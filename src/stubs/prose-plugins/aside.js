@@ -12,10 +12,11 @@ export default function(md, options) {
 function renderProseAside (md) {
   return (tokens, index) => {
     const propsInterface = { type: 'string' },
-          props = toProps(tokens[index].info, propsInterface)
-          
+          props = toProps(tokens[index].info, propsInterface),
+          stringifiedProps = JSON.stringify(props)
+
     return tokens[index].nesting === 1
-      ? `<ProseAside v-bind="${props}">\n`
+      ? `<ProseAside v-bind="${stringifiedProps}">\n`
       : '</ProseAside>'
   }
 }

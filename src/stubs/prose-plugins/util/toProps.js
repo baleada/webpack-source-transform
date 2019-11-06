@@ -19,6 +19,7 @@ export default function(info, propsInterface) {
               group = (match.match(/=(.+)$/) !== null && match.match(/=(.+)$/)[1]) || undefined
         return { prop, group }
       })
+      .filter(({ prop, group }) => propsInterface.hasOwnProperty(prop))
       .reduce((props, { prop, group }) => {
         const propType = propsInterface[prop],
               parse = parsers[propType],

@@ -12,10 +12,11 @@ export default function(md, options) {
 function renderProseDetails (md) {
   return (tokens, index) => {
     const propsInterface = { summary: 'string' },
-          props = toProps(tokens[index].info, propsInterface)
+          props = toProps(tokens[index].info, propsInterface),
+          stringifiedProps = JSON.stringify(props)
 
     return tokens[index].nesting === 1
-      ? `<ProseDetails v-bind="${props}">\n`
+      ? `<ProseDetails v-bind="${stringifiedProps}">\n`
       : '</ProseDetails>'
   }
 }
