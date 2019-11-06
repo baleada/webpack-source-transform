@@ -1,6 +1,6 @@
 // TODO: prism highlight
 import MarkdownIt from 'markdown-it'
-import { aside, blockquote, codeblock, grid, heading, details } from 'prose-plugins'
+import { aside, blockquote, codeblock, grid, heading, details } from './prose-plugins'
 
 const md = new MarkdownIt({
         html: true,
