@@ -40,9 +40,9 @@ function renderProseGrid (md) {
 }
 
 function renderProseGridDescendant (md, descendantName, isClose) {
-  return () => {
+  return (tokens, index, options) => {
     return replaceTag(
-      md.renderer.renderToken(...arguments),
+      md.renderer.renderToken(tokens, index, options),
       `Prose${descendantName}`,
       isClose
     )
