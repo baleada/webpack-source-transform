@@ -1,3 +1,4 @@
+// TODO: prism highlight
 import MarkdownIt from 'markdown-it'
 import { aside, blockquote, codeblock, grid, heading, details } from 'prose-plugins'
 
