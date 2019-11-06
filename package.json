@@ -1,7 +1,7 @@
 {
-  "name": "@baleada/prose-loader",
+  "name": "@baleada/loader",
   "version": "0.0.3",
-  "description": "A flexible webpack loader for markdown files",
+  "description": "An absurdly flexible tool for the Baleada toolkit that loads files during your build step",
   "main": "lib/index.js",
   "scripts": {
     "gen-prose-plugins": "node scripts/generateIndex.js 'stubs/prose-plugins'",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/baleada/prose-loader.git"
+    "url": "git+https://gitlab.com/baleada/loader.git"
   },
   "keywords": [
     "baleada",
@@ -29,9 +29,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://gitlab.com/baleada/prose-loader/issues"
+    "url": "https://gitlab.com/baleada/loader/issues"
   },
-  "homepage": "https://gitlab.com/baleada/prose-loader#readme",
+  "homepage": "https://baleada.netlify.com/docs/loader",
   "devDependencies": {
     "@babel/cli": "^7.6.2",
     "@babel/core": "^7.6.2",
@@ -54,6 +54,7 @@
     "front-matter": "^3.0.2",
     "markdown-it": "^10.0.0",
     "markdown-it-container": "^2.0.0",
-    "prismjs": "^1.17.1"
+    "prismjs": "^1.17.1",
+    "schema-utils": "^2.5.0"
   }
 }

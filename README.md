@@ -1,3 +1,3 @@
-# `@baleada/prose-loader`
+# `@baleada/loader`
 
-A flexible Webpack loader for Markdown files, for the Baleada toolkit.
+An absurdly flexible tool for the Baleada toolkit that loads files during your build step
