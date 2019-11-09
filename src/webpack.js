@@ -8,16 +8,16 @@ const schema = {
       instanceof: 'Function',
     },
   },
-  "additionalProperties": false,
+  additionalProperties: false,
 }
 
 export default function(source) {
   this.cacheable()
 
-  const options = { transform: source => source, ...getOptions(this) },
+  const options = { transform: source => source, ...getOptions(this) }
 
   validate(schema, options, {
-    name: "Baleada Loader",
+    name: 'Baleada Loader',
     baseDataPath: 'options',
     postFormatter: (formattedError, error) => {
       return error.keyword === 'type'

@@ -1,16 +1,10 @@
 {
   "name": "@baleada/loader",
-  "version": "0.0.3",
+  "version": "0.0.0",
   "description": "An absurdly flexible tool for the Baleada toolkit that loads files during your build step",
   "main": "lib/index.js",
   "scripts": {
-    "gen-prose-plugins": "node scripts/generateIndex.js 'stubs/prose-plugins'",
-    "gen-stubs": "node scripts/generateIndex.js 'stubs'",
-    "gen-all": "npm run gen-prose-plugins && npm run gen-stubs",
-    "empty": "node scripts/emptyDir.js 'lib'",
-    "babelify": "npx babel src --out-dir lib",
-    "prepare": "npm run gen-all && npm run empty && npm run babelify",
-    "test": "npx ava"
+    "prepare": "node scripts/prepare.js"
   },
   "repository": {
     "type": "git",
@@ -31,7 +25,7 @@
   "bugs": {
     "url": "https://gitlab.com/baleada/loader/issues"
   },
-  "homepage": "https://baleada.netlify.com/docs/loader",
+  "homepage": "https://baleada.netlify.com",
   "devDependencies": {
     "@babel/cli": "^7.6.2",
     "@babel/core": "^7.6.2",
