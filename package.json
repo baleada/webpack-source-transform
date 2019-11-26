@@ -1,6 +1,6 @@
 {
   "name": "@baleada/loader",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "An absurdly flexible tool for the Baleada toolkit that loads files during your build step",
   "main": "lib/index.js",
   "scripts": {
