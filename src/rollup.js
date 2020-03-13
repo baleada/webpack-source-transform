@@ -11,7 +11,11 @@ export default function(options = {}) {
         return null
       }
 
-      return transform(source, this, id)
+      return transform({
+        source,
+        ...this,
+        id,
+      })
     }
   }
 }

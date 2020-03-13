@@ -4,7 +4,16 @@ import test from 'ava'
 import webpack from 'webpack'
 
 const config = {
-        entry: './tests/stubs/baleada.txt',
+        plugins: [
+          {
+            apply: compiler => {
+              // compiler.hooks.environment.tap('log', () => console.log('environment'))
+              // compiler.hooks.entryOption.tap('log', (context, entry) => console.log({ context, entry }))
+              compiler.hooks.make.tap('log', compilation => console.log(compilation))
+            }
+          }
+        ],
+        entry: './tests/stubs/baleada.js',
         output: {
           path: path.resolve('tests/loader-output'),
           filename: 'webpack.js'
@@ -12,13 +21,15 @@ const config = {
         module: {
           rules: [            
             {
-              test: /\.txt$/,
+              test: /\.js$/,
               use: [
-                { loader: 'raw-loader' },
                 {
                   loader: path.resolve('src/webpack.js'),
                   options: {
-                    transform: (source, { resourcePath }) => `${resourcePath}${source.toString()}`
+                    transform: ({ source, resourcePath }) => {
+                      console.log('here')
+                      return source.toString().replace(/Baleada/, `${resourcePath} - Baleada`)
+                    }
                   }
                 },
               ]
@@ -26,16 +37,21 @@ const config = {
           ]
         }
       },
-      withFilePathRegexp = new RegExp('tests/stubs/baleada.txtBaleada: a toolkit for building web apps')
+      withFilePathRegexp = new RegExp('tests/stubs/baleada.js - Baleada: a toolkit for building web apps')
 
 test('uses the transform callback', t => {
   webpack(
     config,
     (err, stats) => { // Stats Object
       if (err || stats.hasErrors()) {
-        console.log(stats.compilation.errors)
+        console.log({
+          err,
+          has: stats.hasErrors(),
+          errors: stats.compilation.errors
+        })
       }
-    })
+    }
+  )
 
   const value = fs.readFileSync('./tests/loader-output/webpack.js', 'utf8')
 

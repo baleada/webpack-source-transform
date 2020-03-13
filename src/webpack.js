@@ -27,5 +27,9 @@ export default function(source) {
   })
 
   const { transform } = options
-  return transform(source, this)
+  console.log('right here')
+  return transform({
+    source,
+    ...this,
+  })
 }
