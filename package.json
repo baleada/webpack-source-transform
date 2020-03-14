@@ -1,6 +1,6 @@
 {
   "name": "@baleada/loader",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "An absurdly flexible tool for the Baleada toolkit that loads files during your build step",
   "main": "lib/index.js",
   "scripts": {
@@ -46,7 +46,6 @@
     "eslint-plugin-nuxt": "^0.5.1",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
-    "raw-loader": "^4.0.0",
     "regenerator-runtime": "^0.13.3",
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11"
