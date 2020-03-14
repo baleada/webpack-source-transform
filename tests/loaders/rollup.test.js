@@ -1,7 +1,7 @@
 import fs from 'fs'
 import { rollup } from 'rollup'
 import test from 'ava';
-import { rollup as loader } from '../../lib';
+import { rollup as loader } from '../../index.js';
 
 const inputOptions = {
         input: 'tests/stubs/baleada.js',

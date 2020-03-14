@@ -1,7 +1,9 @@
 const babelify = require('./babelify')
 
 function prepare () {
-  babelify()
+  babelify('webpack')
+  babelify('rollup')
+  babelify('index')
 }
 
 prepare()

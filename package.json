@@ -1,7 +1,7 @@
 {
-  "name": "@baleada/loader",
-  "version": "0.1.0",
-  "description": "An absurdly flexible tool for the Baleada toolkit that loads files during your build step",
+  "name": "@baleada/source-transform",
+  "version": "0.2.0",
+  "description": "An absurdly flexible tool for the Baleada toolkit that allows you to transform files' content during your build step",
   "main": "lib/index.js",
   "scripts": {
     "prepare": "node scripts/prepare.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/baleada/loader.git"
+    "url": "git+https://gitlab.com/baleada/source-transform.git"
   },
   "keywords": [
     "baleada",
@@ -24,7 +24,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://gitlab.com/baleada/loader/issues"
+    "url": "https://gitlab.com/baleada/source-transform/issues"
   },
   "homepage": "https://baleada.netlify.com",
   "devDependencies": {
