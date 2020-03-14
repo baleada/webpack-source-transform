@@ -27,7 +27,6 @@ export default function(source) {
   })
 
   const { transform } = options
-  console.log('right here')
   return transform({
     source,
     ...this,

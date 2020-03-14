@@ -4,7 +4,8 @@
   "description": "An absurdly flexible tool for the Baleada toolkit that loads files during your build step",
   "main": "lib/index.js",
   "scripts": {
-    "prepare": "node scripts/prepare.js"
+    "prepare": "node scripts/prepare.js",
+    "test": "npx ava"
   },
   "repository": {
     "type": "git",
