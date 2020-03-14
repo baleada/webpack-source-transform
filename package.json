@@ -1,6 +1,6 @@
 {
   "name": "@baleada/source-transform",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "An absurdly flexible tool for the Baleada toolkit that allows you to transform files' content during your build step",
   "main": "lib/index.js",
   "scripts": {
