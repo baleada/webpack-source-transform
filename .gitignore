@@ -87,4 +87,7 @@ sw.*
 .DS_Store
 
 # Published version
-lib
+webpack.js
+rollup.js
+!src/webpack.js
+!src/rollup.js
