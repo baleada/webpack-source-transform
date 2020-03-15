@@ -1,7 +1,8 @@
-import { createFilter } from '@rollup/pluginutils'
+import pluginUtils from '@rollup/pluginutils'
 
 export default function(options = {}) {
   const { transform, include, exclude } = options,
+        { createFilter } = pluginUtils,
         filter = createFilter(include, exclude)
 
   return {
@@ -13,8 +14,9 @@ export default function(options = {}) {
 
       return transform({
         source,
-        ...this,
         id,
+        context: this,
+        utils: pluginUtils
       })
     }
   }

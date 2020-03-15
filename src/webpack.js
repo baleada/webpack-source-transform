@@ -1,4 +1,4 @@
-import { getOptions } from 'loader-utils'
+import loaderUtils from 'loader-utils'
 import validate from 'schema-utils'
 
 const schema = {
@@ -14,7 +14,8 @@ const schema = {
 export default function(source) {
   this.cacheable()
 
-  const options = { transform: source => source, ...getOptions(this) }
+  const { getOptions } = loaderUtils,
+        options = { transform: ({ source }) => source, ...getOptions(this) }
 
   validate(schema, options, {
     name: 'Baleada Loader',
@@ -29,6 +30,8 @@ export default function(source) {
   const { transform } = options
   return transform({
     source,
-    ...this,
+    id: this.resourcePath,
+    context: this,
+    utils: { ...loaderUtils, validate }
   })
 }

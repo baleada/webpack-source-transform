@@ -14,7 +14,7 @@ module.exports = {
         use: {
           loader: path.resolve('webpack.js'),
           options: {
-            transform: ({ source, resourcePath }) => source.replace(/Baleada/, `${resourcePath} - Baleada`)
+            transform: ({ source, context: { resourcePath } }) => source.replace(/Baleada/, `${resourcePath} - Baleada`)
           },
         },
       },

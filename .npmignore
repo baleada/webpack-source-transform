@@ -2,5 +2,6 @@
 *
 
 # Except these files
-!lib/**/*.js
 !index.js
+!webpack.js
+!rollup.js
