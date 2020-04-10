@@ -12,7 +12,7 @@ module.exports = {
       {
         test: /\.js$/,
         use: {
-          loader: path.resolve('webpack.js'),
+          loader: path.resolve('lib/index.js'),
           options: {
             transform: ({ source, context: { resourcePath } }) => source.replace(/Baleada/, `${resourcePath} - Baleada`)
           },

@@ -1,7 +1,7 @@
 {
-  "name": "@baleada/source-transform",
-  "version": "0.3.0",
-  "description": "An absurdly flexible tool for the Baleada toolkit that allows you to transform files' content during your build step",
+  "name": "@baleada/webpack-source-transform",
+  "version": "0.4.0",
+  "description": "An absurdly flexible tool for the Baleada toolkit that allows you to transform files' content during your build step. Compatible with Webpack.",
   "main": "lib/index.js",
   "scripts": {
     "prepare": "node scripts/prepare.js",
@@ -9,13 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/baleada/source-transform.git"
+    "url": "git+https://gitlab.com/baleada/webpack-source-transform.git"
   },
   "keywords": [
     "baleada",
     "prose",
-    "webpack loader",
-    "rollup plugin"
+    "webpack loader"
   ],
   "author": {
     "name": "Alex Vipond",
@@ -24,7 +23,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://gitlab.com/baleada/source-transform/issues"
+    "url": "https://gitlab.com/baleada/webpack-source-transform/issues"
   },
   "homepage": "https://baleada.netlify.com",
   "devDependencies": {
@@ -35,6 +34,7 @@
     "@babel/runtime-corejs3": "^7.7.4",
     "@baleada/prepare": "0.0.2",
     "@nuxtjs/eslint-config": "^1.1.2",
+    "@rollup/plugin-node-resolve": "^7.1.1",
     "ava": "^3.5.0",
     "babel-eslint": "^10.0.3",
     "core-js": "^3.4.5",
@@ -47,6 +47,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "regenerator-runtime": "^0.13.3",
+    "rollup-plugin-babel": "^4.4.0",
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11"
   },
