@@ -1,6 +1,6 @@
 {
   "name": "@baleada/webpack-source-transform",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "An absurdly flexible tool for the Baleada toolkit that allows you to transform files' content during your build step. Compatible with Webpack.",
   "main": "lib/index.js",
   "scripts": {
